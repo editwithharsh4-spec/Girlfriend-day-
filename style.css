@@ -1,51 +1,73 @@
 body{
 margin:0;
 padding:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ff4d6d,#ff9a9e,#fad0c4);
 overflow:hidden;
+background:linear-gradient(135deg,#ff4d6d,#ff9a9e,#fad0c4);
+font-family:Arial,sans-serif;
 text-align:center;
-color:white;
+color:#fff;
 }
 
 h1{
 margin-top:60px;
 font-size:42px;
-text-shadow:0 0 15px white;
+text-shadow:0 0 20px #fff;
 animation:glow 2s infinite alternate;
 }
 
 p{
 font-size:20px;
-width:90%;
-margin:auto;
-line-height:1.8;
+padding:0 20px;
 }
 
 @keyframes glow{
-from{
-text-shadow:0 0 10px white;
-}
-to{
-text-shadow:0 0 30px yellow,0 0 50px pink;
-}
+from{ text-shadow:0 0 10px #fff; }
+to{ text-shadow:0 0 30px #fff,0 0 60px #ff0; }
 }
 
 .balloon{
 position:absolute;
-bottom:-120px;
-width:40px;
-height:55px;
-background:#ff4d6d;
+bottom:-150px;
+width:70px;
+height:90px;
+border-radius:50% 50% 45% 45%;
+box-shadow:
+inset -10px -15px 20px rgba(0,0,0,.25),
+inset 10px 10px 15px rgba(255,255,255,.6),
+0 10px 20px rgba(0,0,0,.25);
+animation:float linear infinite;
+}
+
+.balloon::before{
+content:"";
+position:absolute;
+top:15px;
+left:15px;
+width:18px;
+height:28px;
+background:rgba(255,255,255,.5);
 border-radius:50%;
-animation:float 10s linear infinite;
+transform:rotate(-25deg);
+}
+
+.balloon::after{
+content:"";
+position:absolute;
+left:34px;
+bottom:-28px;
+width:2px;
+height:30px;
+background:#666;
 }
 
 @keyframes float{
 0%{
-transform:translateY(0);
+transform:translateY(0) rotate(-3deg);
+}
+50%{
+transform:translateY(-60vh) rotate(3deg);
 }
 100%{
-transform:translateY(-120vh);
+transform:translateY(-130vh) rotate(-3deg);
 }
-  }
+}
