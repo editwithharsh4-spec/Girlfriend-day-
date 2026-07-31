@@ -1,90 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Girlfriend Day ❤️</title>
-
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
 
 <div id="loading">
-
-<h1>❤️ Just For My Chini ❤️</h1>
-
-<p>Preparing Your Surprise...</p>
-
+❤️ Just For My Chini ❤️
 </div>
 
-<div id="main" style="display:none;">
+<div class="container">
 
 <h1>Happy Girlfriend Day My Chini ❤️</h1>
 
-<h2>Forever Begins With You</h2>
-
 <p id="typing"></p>
 
-<button id="btn">
-Open My Heart ❤️
-</button>
+<button onclick="openHeart()">Open My Heart ❤️</button>
 
-<div id="letter" style="display:none;">
-
-<h2>💌 My Letter For You 💌</h2>
+<div id="letter">
 
 <p>
+Meri Pyari Chini ❤️
 
-Meri Pyari Chini
+Shayad tumhe kabhi ehsaas bhi na ho ki tum meri zindagi me kitni special ho. 18 March ka woh Wednesday meri life ka sabse khoobsurat din tha kyunki us din meri mulaqat tumse hui thi. Shayad us waqt hume ye nahi pata tha ki ye mulaqat meri poori duniya badal degi. Us din ke baad har subah tumhari yaad se shuru hone lagi aur har raat tumhari baaton ke saath khatam hone lagi.
 
-18 March ka Wednesday meri life ka sabse khoobsurat din tha
+Hamari pehli kiss 21 ko hui thi. Dusri kiss 25 ko hui thi. Aur teesri kiss 1 ko hui thi. Lekin 25 wali kiss mere dil me hamesha sabse khaas rahegi kyunki us din tumne apni taraf se mujhe kiss kiya tha. Us ek pal ne mujhe itni khushi di thi ki main aaj tak us feeling ko bhool nahi paya. Jab bhi us din ko yaad karta hu, mere chehre par bina wajah smile aa jati hai aur dil bas tumhare paas aana chahta hai.
 
-Us din se meri duniya badal gayi
+Tumhari hasi meri sabse badi khushi hai. Tumhari care meri sabse badi taqat hai. Tumhari choti choti baatein, tumhara gussa, tumhara pyar, tumhara har andaaz mujhe aur zyada tumse pyar karna sikha deta hai. Tumhare saath bitaya hua har ek pal meri zindagi ki sabse khoobsurat yaad hai.
 
-Hamari pehli kiss 21 ko hui
+Meri Bahu Bacha ❤️ main sirf aaj nahi balki har din tumhe isi tarah pyar karna chahta hu. Main chahta hu ki ek din hum dono apne saare sapne saath milkar poore karein. Main tumhare saath ek chhota sa ghar, bahut saari khushiyan aur poori zindagi jeena chahta hu. Main sach me tumse shaadi karna chahta hu aur har janam me tumhara hi saath chahta hu.
 
-Dusri 25 ko
+Main wada karta hu ki zindagi me chahe kitni bhi mushkilein aayein, main hamesha tumhara haath pakadkar chalunga. Tumhari khushi meri zimmedari rahegi aur tumhari muskaan meri sabse badi jeet hogi.
 
-Aur teesri 1 ko
+Thank You meri life me aane ke liye. Thank You mujhe itna pyar dene ke liye. Thank You meri duniya ko itna khoobsurat banane ke liye.
 
-Lekin 25 wali kiss hamesha mere dil me rahegi
+I Love You So Much Meri Chini ❤️
 
-Kyunki us din tumne apni taraf se mujhe kiss kiya tha
+Happy Girlfriend Day ❤️
 
-Main kabhi nahi bhoolunga
-
-Tum meri smile ho
-
-Meri khushi ho
-
-Meri Bahu Bacha ho
-
-Main poori zindagi sirf tumhare saath jeena chahta hu
-
-Main tumse shaadi karna chahta hu
-
-Thank You meri life me aane ke liye
-
-I Love You Forever ❤️
-
-Forever Yours
-
+Forever Yours,
+<br>
 Gudd ❤️
-
 </p>
 
 </div>
 
 </div>
 
-<script src="script.js"></script>
+<script>
+
+setTimeout(()=>{
+document.getElementById("loading").style.display="none";
+},2000);
+
+let text="Meri Chini, tum meri duniya ho ❤️";
+let i=0;
+
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typing,100);
+}
+}
+typing();
+
+function openHeart(){
+document.getElementById("letter").style.display="block";
+
+confetti({
+particleCount:200,
+spread:120
+});
+}
+
+</script>
 
 </body>
-
 </html>
